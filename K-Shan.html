@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Shan Co.,Ltd | Premium Organic & Mineral Fertilizer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shan: {
+                            black: '#09090b',     // Deepest Midnight Black
+                            dark: '#121214',      // Premium Zinc-900
+                            card: '#18181b',      // Zinc-800 for card backgrounds
+                            border: '#27272a',    // Zinc-700 for subtle borders
+                            gold: '#facc15',      // Shan Gold (Yellow Accent)
+                            red: '#e11d48',       // Shan Turban Red (Rose-600)
+                            green: '#10b981',     // Agriculture Green
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Pyidaungsu', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Premium Glow & Styling */
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(250, 204, 21, 0.1);
+        }
+        .gold-border-hover:hover {
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
+            border-color: #facc15;
+        }
+        .text-glow-gold {
+            text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+        }
+        .text-glow-red {
+            text-shadow: 0 0 12px rgba(225, 29, 72, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-shan-black text-slate-200 font-sans min-h-screen">
+
+    <!-- ================= PUBLIC CLIENT WEBSITE VIEW ================= -->
+    <div id="public-client-view" class="block">
+        <!-- NAVIGATION BAR -->
+        <nav class="fixed w-full z-50 glass-panel border-b border-zinc-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Brand Identity with Uploaded Logo -->
+                    <div class="flex items-center space-x-3">
+                        <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-shan-gold bg-black flex items-center justify-center">
+                            <img src="image_635be1.png" alt="K-Shan Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/000000/ffffff?text=K-SHAN';">
+                        </div>
+                        <div>
+                            <span class="text-lg font-extrabold tracking-wider block text-white flex items-center gap-1">
+                                K-SHAN <span class="text-shan-gold text-[10px] px-1.5 py-0.5 rounded bg-shan-red/20 text-shan-red font-bold">CO., LTD</span>
+                            </span>
+                            <span class="text-[9px] text-shan-gold block -mt-1 tracking-widest uppercase font-semibold">Organic Agriculture</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                        <a href="#home" class="hover:text-shan-gold transition">ပင်မစာမျက်နှာ</a>
+                        <a href="#matcher" class="hover:text-shan-gold transition flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-shan-gold"></i> သီးနှံတွဲဖက်စနစ်</a>
+                        <a href="#products" class="hover:text-shan-gold transition">ထုတ်ကုန်များ</a>
+                    </div>
+
+                    <!-- Cart & Admin Buttons -->
+                    <div class="flex items-center space-x-3">
+                        <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-shan-dark border border-zinc-800 hover:border-shan-gold transition">
+                            <i class="fa-solid fa-basket-shopping text-lg text-white"></i>
+                            <span id="cart-badge" class="absolute -top-1 -right-1 bg-shan-gold text-shan-black font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+                        </button>
+                        <button onclick="openAdminModal()" class="bg-shan-dark text-shan-gold border border-zinc-800 hover:bg-shan-gold hover:text-shan-black px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-lock"></i> ဝန်ထမ်းအကောင့်
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <header id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex items-center">
+            <!-- Brand Colored Abstract Lights -->
+            <div class="absolute inset-0 bg-gradient-to-b from-shan-black via-shan-black to-shan-black z-0"></div>
+            <div class="absolute top-1/4 right-5 w-96 h-96 bg-shan-gold/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-80 h-80 bg-shan-red/5 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Hero Text -->
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-shan-dark border border-zinc-800 text-shan-gold text-xs font-semibold mb-6">
+                            <span class="w-2 h-2 rounded-full bg-shan-red animate-pulse"></span> မြန်မာနိုင်ငံစိုက်ပျိုးရေးဦးစီးဌာန တရားဝင်မှတ်ပုံတင်ပြီး
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                            စိုက်ပျိုးမြေကို <span class="text-shan-gold text-glow-gold">အသက်သွင်းပါ</span> <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-shan-gold">K-Shan သဘာဝမြေဩဇာ</span>
+                        </h1>
+                        <p class="mt-6 text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
+                            OM (Organic Matter) ၆၀% ကျော် ပါဝင်သော K-Shan သဘာဝမြေဩဇာများသည် မြေဆီလွှာဖွဲ့စည်းပုံကို ကောင်းမွန်စေပြီး သီးနှံအထွက်နှုန်းကို စံချိန်တင် တိုးတက်စေပါသည်။
+                        </p>
+                        <div class="mt-10 flex flex-wrap gap-4">
+                            <a href="#products" class="px-8 py-4 rounded-xl bg-shan-gold text-shan-black font-extrabold text-base shadow-lg shadow-shan-gold/20 hover:bg-white transition duration-300">
+                                ထုတ်ကုန်များ ဝယ်ယူမည်
+                            </a>
+                            <a href="#matcher" class="px-8 py-4 rounded-xl bg-shan-dark text-slate-100 border border-zinc-800 font-bold hover:bg-zinc-800 transition duration-300 flex items-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles text-shan-gold"></i> သီးနှံမြေဆီလွှာ တွဲဖက်ရန်
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Visual Section featuring Large Brand Logo & Badges -->
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-shan-gold/10 to-shan-red/10 rounded-3xl transform rotate-3 blur-sm"></div>
+                        <div class="relative glass-panel rounded-3xl p-8 border border-zinc-800 shadow-2xl">
+                            
+                            <div class="flex items-center space-x-4 mb-6 pb-6 border-b border-zinc-800">
+                                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-shan-gold p-0.5 bg-black flex-shrink-0">
+                                    <img src="image_635be1.png" alt="K-Shan Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/000000/ffffff?text=K-SHAN';">
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white tracking-wide">K-SHAN CO., LTD</h3>
+                                    <p class="text-xs text-shan-gold">သဘာဝမြေဩဇာနှင့် စိုက်ပျိုးရေးနည်းပညာဦးဆောင်သူ</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1.5 font-semibold">
+                                        <span class="text-slate-300">Organic Matter (မြေဆီလွှာ အာဟာရဓာတ်)</span>
+                                        <span class="text-shan-gold font-bold">60.47% (စံချိန်တင်)</span>
+                                    </div>
+                                    <div class="w-full bg-zinc-900 h-3 rounded-full overflow-hidden p-0.5 border border-zinc-800">
+                                        <div class="bg-gradient-to-r from-shan-red to-shan-gold h-full rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1.5 font-semibold">
+                                        <span class="text-slate-300">Calcium (မြေဆီလွှာဖွဲ့စည်းမှု အားကောင်းစေခြင်း)</span>
+                                        <span class="text-shan-gold font-bold">21.48% +</span>
+                                    </div>
+                                    <div class="w-full bg-zinc-900 h-3 rounded-full overflow-hidden p-0.5 border border-zinc-800">
+                                        <div class="bg-gradient-to-r from-shan-red to-shan-gold h-full rounded-full" style="width: 68%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1.5 font-semibold">
+                                        <span class="text-slate-300">Magnesium & Sulphur (အပင်ဖြစ်ထွန်းမှု မြန်ဆန်စေခြင်း)</span>
+                                        <span class="text-shan-gold font-bold">12.15% +</span>
+                                    </div>
+                                    <div class="w-full bg-zinc-900 h-3 rounded-full overflow-hidden p-0.5 border border-zinc-800">
+                                        <div class="bg-gradient-to-r from-shan-red to-shan-gold h-full rounded-full" style="width: 52%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-6 border-t border-zinc-800 grid grid-cols-3 gap-2 text-center">
+                                <div class="p-2 rounded bg-zinc-900/50 border border-zinc-800">
+                                    <div class="text-lg font-black text-white">100%</div>
+                                    <div class="text-[9px] text-shan-gold uppercase tracking-wider font-bold">Organic</div>
+                                </div>
+                                <div class="p-2 rounded bg-zinc-900/50 border border-zinc-800">
+                                    <div class="text-lg font-black text-white">၁၀.၄.၂၀၂၇</div>
+                                    <div class="text-[9px] text-shan-gold uppercase tracking-wider font-bold">Valid Reg</div>
+                                </div>
+                                <div class="p-2 rounded bg-zinc-900/50 border border-zinc-800">
+                                    <div class="text-lg font-black text-white">လျင်မြန်</div>
+                                    <div class="text-[9px] text-shan-gold uppercase tracking-wider font-bold">Delivery</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- INTERACTIVE SOIL & CROP MATCHER -->
+        <section id="matcher" class="py-20 bg-zinc-950/40 border-y border-zinc-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-shan-gold font-bold text-xs uppercase tracking-widest block mb-2">Crop Matcher Intelligent System</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">သီးနှံနှင့် မြေဆီလွှာ အလိုအလျောက် တွဲဖက်တွက်ချက်ပေးစနစ်</h2>
+                    <p class="mt-4 text-slate-400">သင့်စိုက်ပျိုးမြေအခြေအနေနှင့် သီးနှံအမျိုးအစားကို ရွေးချယ်ပြီး အသင့်တော်ဆုံး K-Shan သဘာဝထုတ်ကုန်ကို စိုက်ပျိုးရေးကျွမ်းကျင်သူကဲ့သို့ ရွေးချယ်လိုက်ပါ။</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Selection Inputs -->
+                    <div class="glass-panel rounded-2xl p-6 border border-zinc-800 flex flex-col justify-between space-y-6 lg:col-span-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-sliders text-shan-gold"></i> သတ်မှတ်ချက်များကို ရွေးချယ်ပါ</h3>
+                            
+                            <!-- Input 1 -->
+                            <div class="mb-5">
+                                <label class="block text-sm text-slate-300 font-semibold mb-2">စိုက်ပျိုးမည့် သီးနှံအမျိုးအစား</label>
+                                <select id="crop-select" onchange="runCropMatcher()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-slate-200 font-semibold focus:outline-none focus:border-shan-gold">
+                                    <option value="rice">စပါးပင် (Rice)</option>
+                                    <option value="beans">ပဲမျိုးစုံ (Beans / Pulses)</option>
+                                    <option value="vegetables">ဟင်းသီးဟင်းရွက် (Vegetables)</option>
+                                    <option value="fruits">သစ်သီးဝလံ (Fruits)</option>
+                                </select>
+                            </div>
+
+                            <!-- Input 2 -->
+                            <div>
+                                <label class="block text-sm text-slate-300 font-semibold mb-2">စိုက်ပျိုးမြေဆီလွှာအခြေအနေ</label>
+                                <select id="soil-select" onchange="runCropMatcher()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-slate-200 font-semibold focus:outline-none focus:border-shan-gold">
+                                    <option value="acidic">ချဉ်သောမြေ / အက်စစ်ဓာတ်များသောမြေ (Acidic Soil)</option>
+                                    <option value="sandy">သဲမြေ / အာဟာရဓာတ်အားနည်းသောမြေ (Sandy/Degraded Soil)</option>
+                                    <option value="neutral">မြေဆီလွှာပုံမှန်ဖြစ်သော်လည်း အာဟာရဖြည့်လိုသောမြေ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800">
+                            <button onclick="runCropMatcher()" class="w-full bg-shan-gold text-shan-black font-extrabold py-3.5 rounded-xl hover:bg-white transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> တွက်ချက်စစ်ဆေးရန်
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Matcher Dynamic Result Area -->
+                    <div class="lg:col-span-2 glass-panel rounded-2xl p-8 border border-zinc-800 relative overflow-hidden flex flex-col justify-between min-h-[350px]">
+                        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-shan-gold/5 rounded-full blur-2xl"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-shan-gold/10 flex items-center justify-center border border-shan-gold/20 text-shan-gold">
+                                    <i class="fa-solid fa-chart-pie text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">ကျွမ်းကျင်သူများ၏ အကြံပြုချက်ရလဒ်</h4>
+                                    <span class="text-xs text-shan-gold">Recommended Fertilizer Match Score</span>
+                                </div>
+                            </div>
+
+                            <div id="match-result-container">
+                                <!-- JS will inject output dynamically here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT CATALOG (E-COMMERCE) -->
+        <section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-shan-gold font-bold text-xs uppercase tracking-widest block mb-2">Our Premium Fertilizer Store</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">K-Shan ထုတ်ကုန်အမျိုးအစားများ</h2>
+                </div>
+                <p class="mt-4 md:mt-0 text-slate-400 max-w-md">
+                    စိုက်ပျိုးရေးဦးစီးဌာန တရားဝင်မှတ်ပုံတင်ရရှိထားသော Gypsum၊ Dolomite နှင့် Organic မြေဩဇာများကို သင့်တင့်မျှတသော ဈေးနှုန်းများဖြင့် ဝယ်ယူနိုင်ပါသည်။
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamic Inject Products -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-zinc-950 border-t border-zinc-900 py-12 text-slate-500 text-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border border-shan-gold bg-black flex-shrink-0">
+                        <img src="image_635be1.png" alt="K-Shan Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/000000/ffffff?text=K-SHAN';">
+                    </div>
+                    <div>
+                        <span class="text-sm font-extrabold text-white">K-SHAN CO., LTD</span>
+                        <span class="text-[9px] block">© 2026 K-Shan. All Rights Reserved.</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:items-end text-xs text-slate-400 space-y-1">
+                    <span>စိုက်ပျိုးရေးဦးစီးဌာန မှတ်ပုံတင်အမှတ်: Gypsum 1909 / Gypsum 1910</span>
+                    <span>ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ။</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ================= SECURE ADMIN PORTAL & DASHBOARD (RESTRICTED VIEW) ================= -->
+    <div id="admin-dashboard-view" class="hidden min-h-screen bg-[#070708] flex flex-col">
+        <!-- Dashboard Header -->
+        <header class="border-b border-zinc-800 bg-zinc-950/60 backdrop-blur px-6 py-4 flex items-center justify-between sticky top-0 z-40">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden border border-shan-gold bg-black flex-shrink-0">
+                    <img src="image_635be1.png" alt="K-Shan Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/000000/ffffff?text=K-SHAN';">
+                </div>
+                <div>
+                    <h1 class="text-base font-extrabold text-white tracking-wider">K-SHAN BACKEND</h1>
+                    <p class="text-[10px] text-shan-gold font-bold tracking-wider uppercase"><i class="fa-solid fa-shield-halved mr-1"></i> Admin Dashboard Control Panel</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <span class="text-xs bg-emerald-950/40 text-emerald-400 border border-emerald-800/60 px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Server Active
+                </span>
+                <button onclick="logoutAdmin()" class="bg-zinc-900 border border-zinc-800 hover:bg-shan-red hover:text-white hover:border-shan-red text-slate-300 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-right-from-bracket"></i> ထွက်မည် (Logout)
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Layout -->
+        <main class="flex-1 p-6 max-w-7xl mx-auto w-full space-y-6">
+            <!-- Analytical Stat Widgets -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Stat 1 -->
+                <div class="glass-panel rounded-2xl p-5 border border-zinc-800/80 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold block">စုစုပေါင်းရောင်းရငွေ</span>
+                        <span id="stat-total-revenue" class="text-2xl font-black text-white block mt-1">0 MMK</span>
+                        <span class="text-[10px] text-emerald-400 font-bold block mt-1"><i class="fa-solid fa-circle-arrow-up"></i> +12.4% အပတ်စဉ်တိုးတက်မှု</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-shan-gold/10 text-shan-gold flex items-center justify-center text-xl border border-shan-gold/20">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="glass-panel rounded-2xl p-5 border border-zinc-800/80 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold block">တက်ကြွသောအော်ဒါများ</span>
+                        <span id="stat-active-orders" class="text-2xl font-black text-white block mt-1">0 ခု</span>
+                        <span class="text-[10px] text-shan-gold font-bold block mt-1">စောင့်ဆိုင်းဆဲနှင့်ပို့ဆောင်ဆဲများ</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-shan-gold/10 text-shan-gold flex items-center justify-center text-xl border border-shan-gold/20">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="glass-panel rounded-2xl p-5 border border-zinc-800/80 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold block">မှတ်ပုံတင်ပြီးအဖွဲ့ဝင်တောင်သူ</span>
+                        <span class="text-2xl font-black text-white block mt-1">0 ဦး</span>
+                        <span class="text-[10px] text-slate-400 font-bold block mt-1">မြန်မာနိုင်ငံအဝှမ်းသီးနှံစိုက်ပျိုးသူများ</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-shan-gold/10 text-shan-gold flex items-center justify-center text-xl border border-shan-gold/20">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & System Logging Panels -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Orders Management Database Table -->
+                <div class="lg:col-span-2 glass-panel rounded-2xl p-6 border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-zinc-800">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-table-list text-shan-gold"></i> Orders Database (အမှာစာများ စီမံခန့်ခွဲမှု)
+                            </h3>
+                            <button onclick="clearDatabase()" class="text-xs bg-zinc-900 border border-zinc-700 text-shan-red hover:bg-shan-red hover:text-white px-3 py-1.5 rounded-lg transition font-semibold">
+                                Orders အားလုံးဖျက်သိမ်းရန်
+                            </button>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="text-xs text-slate-400 uppercase tracking-wider border-b border-zinc-800/80">
+                                        <th class="pb-3 font-semibold">ဝယ်ယူသူ</th>
+                                        <th class="pb-3 font-semibold">ဖုန်းနံပါတ်</th>
+                                        <th class="pb-3 font-semibold">ဝယ်ယူသည့်ပစ္စည်း</th>
+                                        <th class="pb-3 font-semibold">စုစုပေါင်း (MMK)</th>
+                                        <th class="pb-3 font-semibold text-right">လုပ်ဆောင်ချက်</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="database-orders-body" class="text-sm divide-y divide-zinc-800/40">
+                                    <!-- Dynamic order rows injection -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live REST API & DB Sandbox Logs -->
+                <div class="glass-panel rounded-2xl p-6 border border-zinc-800 flex flex-col justify-between lg:col-span-1">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-shan-gold"></i> Simulated Database Log
+                        </h3>
+                        <p class="text-xs text-slate-400 mb-4">Frontend API request များဖြစ်သော `GET /api/products` နှင့် `POST /api/orders` တို့၏ Live Server-side State JSON Payload ဖြစ်ပါသည်။</p>
+                        
+                        <div class="bg-black p-4 rounded-xl border border-zinc-800 text-[11px] font-mono overflow-y-auto max-h-80 text-shan-gold leading-normal">
+                            <pre id="api-payload-display">Loading Database Server Logs...</pre>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-zinc-800">
+                        <div class="flex justify-between items-center text-xs text-slate-400">
+                            <span>Backend Engine: <span class="text-shan-gold font-bold">Node.js Sandbox</span></span>
+                            <span>Latency: <span class="font-bold text-emerald-400">12ms</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ================= ADMIN PASSWORD ACCESS GATE MODAL ================= -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Modal backdrop shadow -->
+            <div onclick="closeAdminModal()" class="fixed inset-0 bg-black/90 transition-opacity" aria-hidden="true"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Login Modal Panel -->
+            <div class="inline-block align-middle bg-[#121214] rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full border border-zinc-800">
+                <div class="p-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-zinc-800/80">
+                        <h3 class="text-base font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-shan-gold"></i> ဝန်ထမ်းသီးသန့် ဝင်ရောက်ရန်
+                        </h3>
+                        <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <div class="w-14 h-14 rounded-full bg-shan-gold/10 border border-shan-gold/20 flex items-center justify-center text-shan-gold text-2xl mx-auto mb-4">
+                            <i class="fa-solid fa-lock-open"></i>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">K-Shan ကုမ္ပဏီ ဝန်ထမ်းများနှင့် စီမံခန့်ခွဲသူများသာ စကားဝှက်ရိုက်နှိပ်ဝင်ရောက်နိုင်ရန် ကန့်သတ်ထားပါသည်။</p>
+                        
+                        <div class="text-left bg-zinc-950/80 p-3 rounded-lg border border-zinc-900 text-xs text-shan-gold/80 mb-5">
+
+                        <form id="admin-login-form" onsubmit="submitAdminLogin(event)">
+                            <div class="mb-4">
+                                <input type="password" id="admin-pass-input" required placeholder="စကားဝှက် (Enter Pin)" class="w-full text-center tracking-widest bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-shan-gold text-lg font-bold">
+                            </div>
+                            <div id="login-error-msg" class="text-xs text-shan-red font-bold mb-3 hidden">❌ စကားဝှက် မှားယွင်းနေပါသည်။ ပြန်လည်ကြိုးစားပါ။</div>
+
+                            <button type="submit" class="w-full bg-shan-gold text-shan-black font-extrabold py-3.5 rounded-xl hover:bg-white transition duration-300">
+                                Dashboard သို့ ဝင်ရောက်မည်
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SHOPPING CART SLIDE OVER DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Background Backdrop overlay -->
+            <div onclick="toggleCart()" class="absolute inset-0 bg-black/80 transition-opacity" aria-hidden="true"></div>
+            
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                <div class="pointer-events-auto w-screen max-w-md">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-shan-dark shadow-2xl border-l border-zinc-800">
+                        <!-- Drawer Header -->
+                        <div class="px-6 py-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/40">
+                            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-basket-shopping text-shan-gold"></i> စျေးဝယ်ခြင်းတောင်း
+                            </h2>
+                            <button onclick="toggleCart()" class="text-slate-400 hover:text-white p-1 rounded-full hover:bg-zinc-800">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </button>
+                        </div>
+
+                        <!-- Cart Items Area -->
+                        <div class="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
+                            <div class="flow-root">
+                                <ul id="cart-items-list" class="divide-y divide-zinc-800/40">
+                                    <!-- Dynamic cart items injection -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Cart Bottom Area (Total & Checkout Form) -->
+                        <div class="border-t border-zinc-800 px-4 py-6 sm:px-6 bg-black/30">
+                            <div class="flex justify-between text-base font-bold text-white">
+                                <span>သင့်ကျသင့်ငွေ စုစုပေါင်း</span>
+                                <span id="cart-total-display">0 MMK</span>
+                            </div>
+                            <p class="mt-1 text-xs text-slate-400">ပို့ဆောင်ခနှင့် အခွန်များ မပါဝင်သေးပါ။</p>
+
+                            <!-- Checkout Form -->
+                            <div id="checkout-form-container" class="mt-6 hidden">
+                                <h3 class="text-sm font-bold text-shan-gold mb-3">ဝယ်ယူရန် လိုအပ်သောအချက်အလက်များ</h3>
+                                <form id="order-form" onsubmit="handleCheckout(event)" class="space-y-3">
+                                    <input type="text" id="cust-name" required placeholder="သင့်အမည်" class="w-full text-xs bg-zinc-900 border border-zinc-800 rounded-lg p-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-shan-gold">
+                                    <input type="tel" id="cust-phone" required placeholder="ဆက်သွယ်ရမည့် ဖုန်းနံပါတ်" class="w-full text-xs bg-zinc-900 border border-zinc-800 rounded-lg p-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-shan-gold">
+                                    <textarea id="cust-address" required placeholder="ပို့ဆောင်ရမည့်လိပ်စာ (မြို့နယ်/တိုင်း)" class="w-full text-xs bg-zinc-900 border border-zinc-800 rounded-lg p-2.5 text-white placeholder-slate-400 h-16 focus:outline-none focus:border-shan-gold"></textarea>
+                                    
+                                    <button type="submit" class="w-full mt-4 bg-shan-gold text-shan-black font-black py-3 rounded-xl hover:bg-white transition duration-300">
+                                        အော်ဒါ အတည်ပြုမည်
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="mt-6">
+                                <button id="checkout-toggle-btn" onclick="toggleCheckoutForm()" class="w-full flex items-center justify-center rounded-xl border border-transparent bg-zinc-800 hover:bg-shan-gold hover:text-shan-black px-6 py-3.5 text-sm font-bold text-white shadow-sm transition duration-300">
+                                    မှာယူမှု အတည်ပြုရန် ဆက်သွားမည်
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- INTERACTIVE JAVASCRIPT SYSTEM (FRONTEND + SIMULATED BACKEND ENGINE) -->
+    <script>
+        // BACKEND DATABASE SIMULATION (Active Database on Client Memory via localStorage)
+        const INITIAL_PRODUCTS = [
+            {
+                id: 1,
+                name: "K-Shan သဘာဝမြေဩဇာ (Organic Fertilizer)",
+                category: "Organic",
+                weight: "50 Kg",
+                price: 36000,
+                desc: "နိုက်ထရိုဂျင်၊ ပိုတက်စီယမ်နှင့် အော်ဂဲနစ်ဓာတ်များ ကြွယ်ဝစွာပါဝင်ပြီး မြေဆီလွှာကို အားဖြည့်ပေးသည်။",
+                specs: { OM: "60.47%", N: "1.92%", P: "4.30%", K: "0.72%" }
+            },
+            {
+                id: 2,
+                name: "K-Shan ဂျစ်ပဆမ်မြေဩဇာ (Gypsum)",
+                category: "Gypsum",
+                weight: "25 Kg",
+                price: 24000,
+                desc: "မြေဆီလွှာမာကျောမှုနှင့် အက်စစ်ဓာတ်များခြင်းကို ပြုပြင်ပေးပြီး ဆာလဖာနှင့် ကယ်လ်စီယမ် ပြည့်ဝစေသည်။",
+                specs: { Ca: "21.24%", S: "12.00%", OM: "0.00%", Mg: "0.00%" }
+            },
+            {
+                id: 3,
+                name: "K-Shan ဒိုလိုမိုက်မြေဩဇာ (Dolomite)",
+                category: "Dolomite",
+                weight: "25 Kg",
+                price: 25500,
+                desc: "မြေချဉ်ငံဓာတ် (pH Level) ကို အလျင်အမြန် ထိန်းညှိပေးပြီး မဂ္ဂနီစီယမ် အာဟာရကို ဖြည့်တင်းပေးသည်။",
+                specs: { Ca: "21.48%", Mg: "12.15%", S: "1.31%", OM: "0.00%" }
+            }
+        ];
+
+        // Fetch products and active orders from LocalStorage or initialize them
+        let products = [...INITIAL_PRODUCTS];
+        let orders = JSON.parse(localStorage.getItem('kshan_orders')) || [
+            {
+                id: 1001,
+                customerName: "ဦးတင်အုန်း",
+                phone: "09450012234",
+                address: "လှည်းကူး၊ ရန်ကုန်တိုင်း",
+                items: "K-Shan သဘာဝမြေဩဇာ x 10 အိတ်",
+                total: 360000,
+                status: "ပို့ဆောင်ပြီး"
+            },
+            {
+                id: 1002,
+                customerName: "ဒေါ်အေးအေးစိုး",
+                phone: "09790112233",
+                address: "ဒိုက်ဦး၊ ပဲခူးတိုင်း",
+                items: "K-Shan ဂျစ်ပဆမ်မြေဩဇာ x 5 အိတ်",
+                total: 120000,
+                status: "ပို့ဆောင်ဆဲ"
+            }
+        ];
+
+        let cart = [];
+
+        // ON LOAD INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderOrdersTable();
+            runCropMatcher();
+            updateAPIPayloadDisplay();
+            updateDashboardStats();
+        });
+
+        // FRONTEND: RENDER PRODUCTS
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            products.forEach(p => {
+                grid.innerHTML += `
+                    <div class="glass-panel rounded-2xl overflow-hidden text-slate-100 p-6 flex flex-col justify-between border border-zinc-800 relative transform transition duration-500 hover:-translate-y-2 gold-border-hover">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-shan-gold text-shan-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest">${p.category}</span>
+                                <span class="text-xs text-slate-400 font-bold"><i class="fa-solid fa-weight-hanging mr-1 text-shan-gold"></i> ${p.weight}</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white">${p.name}</h3>
+                            <p class="text-sm text-slate-400 mt-2 leading-relaxed h-12 overflow-hidden">${p.desc}</p>
+                            
+                            <!-- Official Specification Matrix -->
+                            <div class="mt-4 p-3 bg-zinc-900/60 rounded-xl border border-zinc-800">
+                                <h4 class="text-[10px] font-black text-shan-gold uppercase tracking-wider mb-2">စိုက်ပျိုးရေးဌာန မှတ်ပုံတင်ပါ အချက်အလက်များ</h4>
+                                <div class="grid grid-cols-4 gap-1.5 text-center text-[11px] font-bold">
+                                    <div class="bg-zinc-950 p-1.5 rounded-lg border border-zinc-800">
+                                        <span class="block text-shan-red text-xs">OM</span> ${p.specs.OM || "0%"}
+                                    </div>
+                                    <div class="bg-zinc-950 p-1.5 rounded-lg border border-zinc-800">
+                                        <span class="block text-shan-gold text-xs">Ca</span> ${p.specs.Ca || "0%"}
+                                    </div>
+                                    <div class="bg-zinc-950 p-1.5 rounded-lg border border-zinc-800">
+                                        <span class="block text-shan-gold text-xs">Mg</span> ${p.specs.Mg || "0%"}
+                                    </div>
+                                    <div class="bg-zinc-950 p-1.5 rounded-lg border border-zinc-800">
+                                        <span class="block text-shan-gold text-xs">S</span> ${p.specs.S || "0%"}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block">အိတ်စျေးနှုန်း</span>
+                                <span class="text-xl font-black text-white">${p.price.toLocaleString()} <span class="text-xs text-shan-gold">MMK</span></span>
+                            </div>
+                            <button onclick="addToCart(${p.id})" class="px-5 py-2.5 rounded-xl bg-zinc-900 text-shan-gold border border-zinc-800 font-bold text-xs hover:bg-shan-gold hover:text-shan-black transition duration-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-cart-plus"></i> တောင်းထဲထည့်မည်
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // FRONTEND: CROP MATCHER ALGORITHM
+        function runCropMatcher() {
+            const crop = document.getElementById('crop-select').value;
+            const soil = document.getElementById('soil-select').value;
+            const resultBox = document.getElementById('match-result-container');
+
+            let recommendedProduct = products[0]; // default Organic
+            let logicExplain = "";
+            let score = 98;
+
+            if (soil === "acidic") {
+                recommendedProduct = products[2]; // Dolomite corrects acid
+                logicExplain = "<strong>အက်စစ်မြေ (ချဉ်သောမြေ)</strong> ဖြစ်နေသောကြောင့် မြေဆီလွှာ pH ဓာတ်ကို လျင်မြန်စွာ ထိန်းညှိရန် မဂ္ဂနီစီယမ် အာဟာရဓာတ် ကြွယ်ဝသော <strong>K-Shan ဒိုလိုမိုက်မြေဩဇာ</strong> က သင့်တော်ဆုံး ဖြစ်ပါသည်။ ၎င်းသည် မြေဆီလွှာ အချဉ်ဓာတ်ကို လျှော့ချပေးပြီး အပင်၏ အမြစ်များ အာဟာရစုပ်ယူမှုကို အကျိုးပြုပါသည်။";
+                score = 96;
+            } else if (crop === "rice" && soil === "neutral") {
+                recommendedProduct = products[1]; // Gypsum helps rice yield
+                logicExplain = "<strong>စပါးသီးနှံ</strong> အတွက် အပင်တည်ဆောက်ပုံ ခိုင်မာစေပြီး အစေ့အောင်ရန် ကယ်လ်စီယမ်နှင့် ဆာလဖာဓာတ် (Sulphur) ဖြည့်တင်းရန် <strong>K-Shan ဂျစ်ပဆမ်မြေဩဇာ</strong> က သင့်တော်ဆုံး ဖြစ်ပါသည်။ ၎င်းသည် စပါးပင်ကို လေပြင်းဒဏ် ခံနိုင်ရည်ရှိစေပြီး အထွက်နှုန်းတိုးစေပါသည်။";
+                score = 94;
+            } else {
+                recommendedProduct = products[0]; // Organic for sandy/general
+                logicExplain = "သီးနှံမျိုးစုံ စိုက်ပျိုးနိုင်သော မြေဆီလွှာ ဖွဲ့စည်းပုံ လိုအပ်ချက်အတွက် Organic Matter ၆၀% ကျော် ပါဝင်သော <strong>K-Shan သဘာဝမြေဩဇာ (Organic Fertilizer)</strong> က သင့်တော်ဆုံး ဖြစ်ပါသည်။ မြေဆီလွှာအတွင်းရှိ အကျိုးပြု ဇီဝကမ္မများကို တိုးပွားစေပြီး သဲမြေနှင့် ရေထိန်းအားနည်းသောမြေများကို ပြုပြင်ပေးပါသည်။";
+                score = 98;
+            }
+
+            resultBox.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <span class="text-xs font-bold text-shan-gold bg-zinc-950 px-2.5 py-1 rounded-full uppercase border border-zinc-800">Recommend Match: ${score}%</span>
+                        <h4 class="text-2xl font-black text-white mt-3">${recommendedProduct.name}</h4>
+                        <p class="text-sm text-slate-300 mt-4 leading-relaxed">${logicExplain}</p>
+                    </div>
+                    <div class="p-5 bg-zinc-900/40 rounded-2xl border border-zinc-800 text-center relative">
+                        <div class="text-4xl font-black text-zinc-800 absolute top-2 right-4 select-none tracking-widest">K-SHAN</div>
+                        <span class="text-[10px] text-slate-400 block">အကြံပြုချက် ထုတ်ကုန်</span>
+                        <div class="w-16 h-16 rounded-full bg-shan-gold/10 border border-shan-gold/20 flex items-center justify-center text-shan-gold text-2xl mx-auto my-3">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-sm font-extrabold text-white block">${recommendedProduct.name}</span>
+                        <span class="text-xs text-slate-400 block mt-1">${recommendedProduct.weight} - ${recommendedProduct.price.toLocaleString()} MMK</span>
+                        <button onclick="addToCart(${recommendedProduct.id})" class="mt-4 w-full py-2.5 rounded-xl bg-shan-gold text-shan-black font-black text-xs hover:bg-white transition">
+                            တောင်းထဲသို့ထည့်၍ မှာယူမည်
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // FRONTEND: SHOPPING CART MANAGEMENT
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.product.id === productId);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ product, quantity: 1 });
+            }
+
+            updateCartUI();
+            document.getElementById('cart-drawer').classList.remove('hidden');
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.product.id !== productId);
+            updateCartUI();
+        }
+
+        function changeCartQuantity(productId, amount) {
+            const item = cart.find(item => item.product.id === productId);
+            if (item) {
+                item.quantity += amount;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const list = document.getElementById('cart-items-list');
+            const badge = document.getElementById('cart-badge');
+            const totalDisplay = document.getElementById('cart-total-display');
+            
+            list.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                list.innerHTML = `<li class="py-12 text-center text-slate-500 text-sm">ဈေးဝယ်ခြင်းတောင်းထဲတွင် ပစ္စည်းမရှိသေးပါ။</li>`;
+                document.getElementById('checkout-toggle-btn').classList.add('hidden');
+                document.getElementById('checkout-form-container').classList.add('hidden');
+            } else {
+                document.getElementById('checkout-toggle-btn').classList.remove('hidden');
+                cart.forEach(item => {
+                    const itemTotal = item.product.price * item.quantity;
+                    total += itemTotal;
+                    totalItems += item.quantity;
+
+                    list.innerHTML += `
+                        <li class="py-4 flex items-center justify-between gap-4">
+                            <div class="flex-1">
+                                <span class="text-xs text-shan-gold block font-bold">${item.product.category}</span>
+                                <h4 class="text-sm font-bold text-white leading-snug">${item.product.name}</h4>
+                                <span class="text-xs text-slate-400 block">${item.product.weight} • ${item.product.price.toLocaleString()} MMK</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="changeCartQuantity(${item.product.id}, -1)" class="w-6 h-6 rounded-lg bg-zinc-800 text-white flex items-center justify-center font-bold hover:bg-zinc-700 text-xs">-</button>
+                                <span class="text-sm font-bold text-white w-6 text-center">${item.quantity}</span>
+                                <button onclick="changeCartQuantity(${item.product.id}, 1)" class="w-6 h-6 rounded-lg bg-zinc-800 text-white flex items-center justify-center font-bold hover:bg-zinc-700 text-xs">+</button>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm font-extrabold text-white block">${itemTotal.toLocaleString()} MMK</span>
+                                <button onclick="removeFromCart(${item.product.id})" class="text-shan-red hover:text-red-400 text-xs mt-1">ဖျက်ရန်</button>
+                            </div>
+                        </li>
+                    `;
+                });
+            }
+
+            badge.innerText = totalItems;
+            if (totalItems > 0) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            totalDisplay.innerText = `${total.toLocaleString()} MMK`;
+        }
+
+        function toggleCheckoutForm() {
+            const form = document.getElementById('checkout-form-container');
+            const btn = document.getElementById('checkout-toggle-btn');
+            form.classList.toggle('hidden');
+            btn.classList.add('hidden');
+        }
+
+        // FRONTEND: CHECKOUT HANDLER
+        function handleCheckout(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) return;
+
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
+
+            const itemsStr = cart.map(item => `${item.product.name} x ${item.quantity}`).join(', ');
+            const grandTotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+
+            // Create Simulated Database Row
+            const newOrder = {
+                id: orders.length + 1001,
+                customerName: name,
+                phone: phone,
+                address: address,
+                items: itemsStr,
+                total: grandTotal,
+                status: "အသစ်"
+            };
+
+            // PERSIST DATABASE ROW
+            orders.unshift(newOrder);
+            localStorage.setItem('kshan_orders', JSON.stringify(orders));
+
+            // Reset state
+            cart = [];
+            updateCartUI();
+            document.getElementById('order-form').reset();
+            document.getElementById('cart-drawer').classList.add('hidden');
+            
+            // Refresh systems
+            renderOrdersTable();
+            updateAPIPayloadDisplay();
+            updateDashboardStats();
+
+            // Notify user of order completion (Toast notification)
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-5 right-5 z-50 p-6 rounded-2xl bg-zinc-900 border border-shan-gold shadow-2xl text-slate-100 max-w-sm transform transition-all duration-500 translate-y-10 opacity-0';
+            notification.innerHTML = `
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-shan-gold text-shan-black flex items-center justify-center font-bold">✓</div>
+                    <h4 class="font-extrabold text-white font-sans">အော်ဒါ လက်ခံရရှိပါသည်!</h4>
+                </div>
+                <p class="text-xs text-slate-300">အော်ဒါအမှတ်: <strong>#ID-${newOrder.id}</strong></p>
+                <p class="text-xs text-slate-300">စုစုပေါင်းကျသင့်ငွေ: <strong>${grandTotal.toLocaleString()} MMK</strong></p>
+                <p class="text-[11px] text-slate-400 mt-2">K-Shan Co.,Ltd မှ ပစ္စည်းပေးပို့ရန် ဖုန်းဖြင့် ဆက်သွယ်ပေးပါမည်။</p>
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.classList.remove('translate-y-10', 'opacity-0');
+            }, 100);
+            setTimeout(() => {
+                notification.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => notification.remove(), 500);
+            }, 6000);
+        }
+
+        // ================= SECURE GATE & DASHBOARD CONTROLS =================
+
+        function openAdminModal() {
+            document.getElementById('admin-login-modal').classList.remove('hidden');
+            document.getElementById('admin-pass-input').focus();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-login-modal').classList.add('hidden');
+            document.getElementById('login-error-msg').classList.add('hidden');
+            document.getElementById('admin-pass-input').value = '';
+        }
+
+        function submitAdminLogin(event) {
+            event.preventDefault();
+            const enteredPass = document.getElementById('admin-pass-input').value;
+
+            // Simple mock authorization gate (Passes: 1234 or admin)
+            if (enteredPass === "K-Shan2026" || enteredPass.toLowerCase() === "dreamcometrue") {
+                closeAdminModal();
+                showAdminDashboard();
+            } else {
+                document.getElementById('login-error-msg').classList.remove('hidden');
+            }
+        }
+
+        function showAdminDashboard() {
+            document.getElementById('public-client-view').classList.add('hidden');
+            document.getElementById('admin-dashboard-view').classList.remove('hidden');
+            // Refresh Database visuals
+            renderOrdersTable();
+            updateAPIPayloadDisplay();
+            updateDashboardStats();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function logoutAdmin() {
+            document.getElementById('admin-dashboard-view').classList.add('hidden');
+            document.getElementById('public-client-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // BACKEND CONTROLLER: CHANGE ORDER STATUS
+        function updateOrderStatus(orderId, newStatus) {
+            const order = orders.find(o => o.id === orderId);
+            if (order) {
+                order.status = newStatus;
+                localStorage.setItem('kshan_orders', JSON.stringify(orders));
+                renderOrdersTable();
+                updateAPIPayloadDisplay();
+                updateDashboardStats();
+            }
+        }
+
+        // BACKEND CONTROLLER: DELETE ORDER
+        function deleteOrder(orderId) {
+            if (confirm(`အော်ဒါအမှတ် #${orderId} အား ဒေတာဘေ့စ်မှ ဖျက်သိမ်းလိုပါသလား?`)) {
+                orders = orders.filter(o => o.id !== orderId);
+                localStorage.setItem('kshan_orders', JSON.stringify(orders));
+                renderOrdersTable();
+                updateAPIPayloadDisplay();
+                updateDashboardStats();
+            }
+        }
+
+        // RE-CALCULATE ANALYTICAL METRICS
+        function updateDashboardStats() {
+            const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
+            const activeOrders = orders.filter(o => o.status !== "ပို့ဆောင်ပြီး").length;
+
+            document.getElementById('stat-total-revenue').innerText = `${totalRevenue.toLocaleString()} MMK`;
+            document.getElementById('stat-active-orders').innerText = `${activeOrders} ခု`;
+        }
+
+        // BACKEND DATABASE VIEW UPDATES
+        function renderOrdersTable() {
+            const tbody = document.getElementById('database-orders-body');
+            tbody.innerHTML = '';
+
+            if (orders.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-slate-500">ဒေတာဘေ့စ်တွင် မည်သည့်အော်ဒါမျှ စာရင်းမရှိသေးပါ။</td></tr>`;
+                return;
+            }
+
+            orders.forEach(order => {
+                let badgeClass = "bg-amber-950/40 border-amber-800 text-amber-400"; // Pending / New
+                if (order.status === "ပို့ဆောင်ပြီး") {
+                    badgeClass = "bg-green-950/40 border-green-800 text-emerald-400";
+                } else if (order.status === "ပို့ဆောင်ဆဲ") {
+                    badgeClass = "bg-sky-950/40 border-sky-800 text-sky-400";
+                }
+
+                tbody.innerHTML += `
+                    <tr class="hover:bg-zinc-900/30 transition">
+                        <td class="py-4 font-bold text-slate-200">
+                            ${order.customerName}
+                            <span class="block text-[10px] text-slate-400 font-normal mt-0.5"><i class="fa-solid fa-location-dot text-shan-gold mr-1"></i> ${order.address}</span>
+                        </td>
+                        <td class="py-4 text-slate-300 font-mono text-xs">${order.phone}</td>
+                        <td class="py-4 text-slate-300 text-xs truncate max-w-[200px]" title="${order.items}">${order.items}</td>
+                        <td class="py-4 font-extrabold text-white">${order.total.toLocaleString()}</td>
+                        <td class="py-4 text-right">
+                            <div class="flex items-center justify-end space-x-2">
+                                <select onchange="updateOrderStatus(${order.id}, this.value)" class="bg-zinc-900 border border-zinc-800 text-xs text-slate-200 p-1.5 rounded-lg focus:outline-none focus:border-shan-gold">
+                                    <option value="အသစ်" ${order.status === "အသစ်" ? "selected" : ""}>အသစ်ဝင်</option>
+                                    <option value="ပို့ဆောင်ဆဲ" ${order.status === "ပို့ဆောင်ဆဲ" ? "selected" : ""}>ပို့ဆောင်ဆဲ</option>
+                                    <option value="ပို့ဆောင်ပြီး" ${order.status === "ပို့ဆောင်ပြီး" ? "selected" : ""}>ပို့ဆောင်ပြီး</option>
+                                </select>
+                                <button onclick="deleteOrder(${order.id})" class="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-shan-red hover:bg-shan-red hover:text-white hover:border-shan-red transition text-xs">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // BACKEND SIMULATED REST API PAYLOAD GENERATION
+        function updateAPIPayloadDisplay() {
+            const apiDisplay = document.getElementById('api-payload-display');
+            
+            const simulatedAPIResponse = {
+                status: 200,
+                message: "Fetched secure payloads from SQLite Node Server Engine",
+                timestamp: new Date().toISOString(),
+                serverStatus: "RUNNING",
+                databaseEngine: "Client Storage Session Database Sandbox",
+                payload: {
+                    totalProducts: products.length,
+                    activeOrdersCount: orders.length,
+                    registeredUsers: 1248,
+                    currentSessionRole: "Administrator",
+                    orders: orders
+                }
+            };
+
+            apiDisplay.textContent = JSON.stringify(simulatedAPIResponse, null, 2);
+        }
+
+        function clearDatabase() {
+            if (confirm("အော်ဒါ Database ထဲရှိ အချက်အလက်များ အားလုံးကို အပြီးတိုင် ဖျက်ဆီးလိုပါသလား?")) {
+                localStorage.removeItem('kshan_orders');
+                orders = [];
+                renderOrdersTable();
+                updateAPIPayloadDisplay();
+                updateDashboardStats();
+            }
+        }
+    </script>
+
+</body>
+</html>
